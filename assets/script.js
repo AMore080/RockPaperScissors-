@@ -1,4 +1,11 @@
 let playerSelection;
+let playerBTN = document.querySelectorAll('#playerSelect');
+playerBTN.forEach((button) => {
+    button.addEventListener('click',()=>{
+        playerSelection = (button.textContent)
+        game(playerSelection)
+    })
+})
 
 const RPS = ["rock","paper","scissors"]
 
@@ -12,9 +19,14 @@ let computerSelection;
 
 playRound = (playerSelection,computerSelection) => {
     computerSelection = getComputerChoice();
-    playerSelection = prompt("R, P ,S");
+    
+    // playerSelection.forEach((button) => {
+    //     button.addEventListener('click',()=>{
+    //         alert("clicked!")
+    //     })
+    // })
+
     console.log(playerSelection)
-    playerSelection.toLowerCase();
     
     if(playerSelection == 'rock' && computerSelection == "scissors"){
         console.log("You win this round!");
@@ -34,12 +46,8 @@ playRound = (playerSelection,computerSelection) => {
     }
 }
 
-game = () => {
-    for(let i = 0; i < 5; i++){
-        playRound();
-    }
+game = (playerSelection) => {
+
+    playRound(playerSelection);
     return;
 }
-
-
-game();
