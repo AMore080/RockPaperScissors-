@@ -2,7 +2,7 @@ let playerSelection;
 let playerBTN = document.querySelectorAll('#playerSelect');
 playerBTN.forEach((button) => {
     button.addEventListener('click',()=>{
-        playerSelection = (button.textContent)
+        playerSelection = (button.textContent.toLowerCase())
         game(playerSelection)
     })
 })
