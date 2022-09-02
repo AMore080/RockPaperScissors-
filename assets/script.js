@@ -1,4 +1,4 @@
-let playerSelection = "rock";
+let playerSelection;
 
 const RPS = ["rock","paper","scissors"]
 
@@ -8,21 +8,33 @@ getComputerChoice = () => {
     return RPS[randomChoice];
 }
 
-const computerSelection = getComputerChoice();
+let computerSelection;
 
 playRound = (playerSelection,computerSelection) => {
+    computerSelection = getComputerChoice();
+    playerSelection = prompt("R, P ,S");
+    console.log(playerSelection)
     playerSelection.toLowerCase();
-
+    
     if(playerSelection == 'rock' && computerSelection == "scissors"){
         return "You win this round!";
     } else if(playerSelection == "paper" && computerSelection == "rock"){
         return "You win this round!";
     } else if(playerSelection == "scissors" && computerSelection == 'paper'){
         return "You win this round!";
+    } else if(playerSelection === computerSelection){
+        return "TIE!";
     } else {
         return "You LOST!";
     }
 }
 
-getComputerChoice();
-console.log(playRound(playerSelection,computerSelection))
+game = () => {
+    for(let i = 0; i < 5; i++){
+        playRound();
+    }
+    return;
+}
+
+
+game();
