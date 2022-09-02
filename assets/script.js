@@ -17,14 +17,19 @@ playRound = (playerSelection,computerSelection) => {
     playerSelection.toLowerCase();
     
     if(playerSelection == 'rock' && computerSelection == "scissors"){
+        console.log("You win this round!");
         return "You win this round!";
     } else if(playerSelection == "paper" && computerSelection == "rock"){
+        console.log("You win this round!");
         return "You win this round!";
     } else if(playerSelection == "scissors" && computerSelection == 'paper'){
+        console.log("You win this round!");
         return "You win this round!";
     } else if(playerSelection === computerSelection){
+        console.log("Tie");
         return "TIE!";
     } else {
+        console.log("LOSER")
         return "You LOST!";
     }
 }
